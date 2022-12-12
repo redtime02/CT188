@@ -1,0 +1,127 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+div.container{
+    width: 70%;
+    margin: 20px auto;
+    background-color: beige;
+    padding-top: 20px ;
+    
+}
+.underline-by-gradient {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.underline-by-gradient::after{
+    content: "";
+    position: absolute; /* sử dụng position: relative thì tính dễ hơn */
+    left: 50%;
+    bottom: -10px;
+    width: 300px;
+    height: 5px;
+    background: blue;
+    transform: translatex(-150px);
+}
+.form-row{
+    width: 90%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 5px auto;
+    border: 1px dashed blue;
+}
+input[type=text],
+input[type=email]{
+ width:100%;
+ padding:12px 20px;
+ margin:10px 0;
+ display:inline-block;
+ border:1px solid #ccc;
+ border-radius:4px;
+}
+input[type=submit],
+input[type=reset]{
+ width: 100%;
+ background-color: #4CAF50;
+ color: white;
+ padding: 14px 0;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ display: block;
+ margin: 1px auto;
+
+}
+input[type=submit]:hover,
+input[type=reset]:hover{
+ background-color: #45a049;
+
+}
+.form-row.success input{
+    border: 2px solid green;
+
+}
+.form-row.success .message::before{
+    color: blue;
+    content: "\2713 passed.";
+    font-weight: 900;
+    font-size: 1em;
+    visibility: visible;
+ }
+.form-row.error input{
+    border: 2px solid red;
+}
+.form-row .message{
+    visibility: hidden;
+    margin: 2px 0 12px 0;
+    font-weight: bold;
+    font-size: 11px;
+}
+.form-row.error .message{
+    visibility: visible;
+    color: red;
+}
+.container.complete{
+    border: 3px groove;
+    /* background-color: #f558b9;*/
+}
+@keyframes animatedColors{
+    0%{
+        background-color: red;
+    }
+    20%{
+        background-color: orange;}
+    40%{
+        background-color: yellow;}
+    60%{
+        background-color: green;
+    }
+    80%{
+        background-color: blue;
+    }
+    100%{
+       background-color: purple;
+    }
+}
+
+
+.box-animation{
+    margin: 10px auto;
+    width: 70%;
+    padding: 10px;
+    font-size: 1.2em;
+    color: #fff;
+    text-align: center;
+    border-radius: 1em;
+    visibility: hidden;
+    animation: animatedColors 10s linear infinite alternate;
+
+}
+.box-animation.show{
+    visibility: visible;
+
+}
